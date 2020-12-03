@@ -1,0 +1,31 @@
+.logo {
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.logo-img {
+    height: 40px;
+}
+
+button {
+    margin: 10px;
+}
+
+.btn-set {
+    margin-top: 20px;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+.products {
+    width: -webkit-fill-available;
+    height: auto;
+}
+
+@media (max-width: 600px) {
+    .title {
+        font-size: 22px;
+    }
+}

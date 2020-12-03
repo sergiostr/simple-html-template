@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+    <title>SDM Endpoint</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo d-flex justify-content-center">
+            <img src="static/logo.png" style="width: 200px;" alt="logo" class="logo-img">
+        </div>
+        
+    </header>
+    <div class="container-fluid bg-light">
+        <div class="container">
+            <div class="container alert alert-success alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                {% if tt_status == "secure" %}
+                <p class="text-secondary text-center small">Authentic! This pair is the real deal. </p>
+                {% else %}
+                <p class="text-secondary text-center small">Whoops! Looks like this pair was tampered with.</p>
+                {% endif %}
+            </div>
+            <div class="title">
+                <h4 class="text-secondary title">{{ product.brand }}</h4>
+                <h4 class="text-secondary title">{{ product.title }}</h4>
+                <h4 class="text-secondary title">{{ product.nickname }}</h4>
+            </div>
+            <div class="d-flex justify-content-center">
+                <img class="products" src="static/FZ1270_1.png" alt="Cooming soon">
+            </div> 
+            Scan count: {{ read_ctr_num }}<br>
+            Status: <b style="color: {{ tt_color }};">{{ tt_status }}</b><br>
+            Inspected on: {{ inspected_on }}<br>
+            <hr>
+            
+            <div class="container">
+                <h5 class="block-title text-secondary">Details</h5>
+                <p class="text-secondary">{{ product.description }}</p>
+                <p class="text-secondary">SKU: {{ product.sku }}</p>
+                <p class="text-secondary">Color: {{ product.color }}</p>
+                <p class="text-secondary">Gender: {{ product.gender }}</p>
+                <p class="text-secondary">Size: {{ product.size }}</p>
+                <p class="text-secondary">Country: {{ product.country }}</p>
+                <p class="text-secondary">Release date: {{ product.release_date }}</p>
+            </div>
+            <div class="container">
+                <h5 class="block-title text-secondary">100% Authentic, Guaranteed</h5>
+                <p class="text-secondary">Authenticity is the foundation of our business, and every item we sell is inspected by our expert team.
+                    Our authenticators are the most experienced and highly trained in the business. In addition, we source our products only from trusted suppliers. Learn more about our policies <a href="#">here</a>.
+                </p>
+            </div>
+            <!-- <a href="{{ product.shop }}"><img src="/static/shop.png" style="width: 50px;"></a>
+            <a href="{{ product.shop }}"><img src="/static/shop.png" style="width: 50px;"></a> -->
+            <div class="btn-set">
+                <button type="button" class="btn btn-dark btn-lg">SHOP NOW</button>
+                <button type="button" class="btn btn-dark btn-lg">SELL NOW</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
